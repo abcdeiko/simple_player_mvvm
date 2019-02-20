@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B04D992221C979F00EE073C /* VideoItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B04D990221C979F00EE073C /* VideoItemTableViewCell.swift */; };
+		5B04D993221C979F00EE073C /* VideoItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B04D991221C979F00EE073C /* VideoItemTableViewCell.xib */; };
+		5B04D995221C9BDB00EE073C /* ModelYoutubeVideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B04D994221C9BDB00EE073C /* ModelYoutubeVideoInfo.swift */; };
+		5B04D998221CA44400EE073C /* YoutubePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B04D997221CA44400EE073C /* YoutubePlayerViewController.swift */; };
 		5B1781322218911B000758E4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B1781342218911B000758E4 /* Localizable.strings */; };
 		5B17813922189382000758E4 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B17813822189382000758E4 /* AudioViewController.swift */; };
 		5B17813B22189399000758E4 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B17813A22189399000758E4 /* VideoViewController.swift */; };
@@ -22,6 +26,7 @@
 		5B9366B42215D79E00539965 /* playerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9366B32215D79E00539965 /* playerTests.swift */; };
 		5B9366BF2215D79E00539965 /* playerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9366BE2215D79E00539965 /* playerUITests.swift */; };
 		5BFE03EA2219A0C20009F0C8 /* StreamPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFE03E92219A0C20009F0C8 /* StreamPlayer.swift */; };
+		5BFEE685221D14A800E00809 /* YoutubePlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BFEE684221D14A800E00809 /* YoutubePlayerViewController.xib */; };
 		8D993B302966FF389EEEBCF8 /* Pods_playerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1D934CA4E0F91207E0A141 /* Pods_playerUITests.framework */; };
 		BA4620DE24B8519616233469 /* Pods_player.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C859E97AFCA536430421BC8A /* Pods_player.framework */; };
 		D6FF080DA42CCDE52277BD2C /* Pods_playerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1D8DC4A23612034C4B02E95 /* Pods_playerTests.framework */; };
@@ -49,6 +54,10 @@
 		3B1D934CA4E0F91207E0A141 /* Pods_playerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_playerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B2DF501335A084ED785A052 /* Pods-playerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-playerTests/Pods-playerTests.release.xcconfig"; sourceTree = "<group>"; };
 		503F8FD2C31B41352F883FF4 /* Pods-player.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-player.debug.xcconfig"; path = "Pods/Target Support Files/Pods-player/Pods-player.debug.xcconfig"; sourceTree = "<group>"; };
+		5B04D990221C979F00EE073C /* VideoItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoItemTableViewCell.swift; sourceTree = "<group>"; };
+		5B04D991221C979F00EE073C /* VideoItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoItemTableViewCell.xib; sourceTree = "<group>"; };
+		5B04D994221C9BDB00EE073C /* ModelYoutubeVideoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelYoutubeVideoInfo.swift; sourceTree = "<group>"; };
+		5B04D997221CA44400EE073C /* YoutubePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubePlayerViewController.swift; sourceTree = "<group>"; };
 		5B1781352218915C000758E4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		5B1781362218915C000758E4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		5B1781372218915C000758E4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -72,6 +81,7 @@
 		5B9366BE2215D79E00539965 /* playerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playerUITests.swift; sourceTree = "<group>"; };
 		5B9366C02215D79E00539965 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BFE03E92219A0C20009F0C8 /* StreamPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamPlayer.swift; sourceTree = "<group>"; };
+		5BFEE684221D14A800E00809 /* YoutubePlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YoutubePlayerViewController.xib; sourceTree = "<group>"; };
 		88275CD7AD204D202C866640 /* Pods-playerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-playerUITests/Pods-playerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9B0EFD703097EA6E74D2B8C1 /* Pods-playerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-playerUITests/Pods-playerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B3F40BE0B1F4A1A9730CB0EF /* Pods-player.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-player.release.xcconfig"; path = "Pods/Target Support Files/Pods-player/Pods-player.release.xcconfig"; sourceTree = "<group>"; };
@@ -120,9 +130,28 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5B04D98F221C978100EE073C /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				5B04D990221C979F00EE073C /* VideoItemTableViewCell.swift */,
+				5B04D991221C979F00EE073C /* VideoItemTableViewCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		5B04D996221CA42A00EE073C /* player */ = {
+			isa = PBXGroup;
+			children = (
+				5B04D997221CA44400EE073C /* YoutubePlayerViewController.swift */,
+				5BFEE684221D14A800E00809 /* YoutubePlayerViewController.xib */,
+			);
+			path = player;
+			sourceTree = "<group>";
+		};
 		5B17812F2218872C000758E4 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				5B04D996221CA42A00EE073C /* player */,
 				5B17813F22189BEB000758E4 /* video */,
 				5B17813E22189BE5000758E4 /* audio */,
 				5B9366A02215D79B00539965 /* ViewController.swift */,
@@ -144,6 +173,7 @@
 		5B17813F22189BEB000758E4 /* video */ = {
 			isa = PBXGroup;
 			children = (
+				5B04D98F221C978100EE073C /* cell */,
 				5B17813A22189399000758E4 /* VideoViewController.swift */,
 				5B17814022189DE1000758E4 /* VideoViewController.xib */,
 			);
@@ -225,6 +255,7 @@
 		5BFE03EC2219F3B20009F0C8 /* youtube */ = {
 			isa = PBXGroup;
 			children = (
+				5B04D994221C9BDB00EE073C /* ModelYoutubeVideoInfo.swift */,
 			);
 			path = youtube;
 			sourceTree = "<group>";
@@ -356,6 +387,8 @@
 				5B17814122189DE1000758E4 /* VideoViewController.xib in Resources */,
 				5B9366A92215D79E00539965 /* LaunchScreen.storyboard in Resources */,
 				5B17813D22189831000758E4 /* AudioViewController.xib in Resources */,
+				5B04D993221C979F00EE073C /* VideoItemTableViewCell.xib in Resources */,
+				5BFEE685221D14A800E00809 /* YoutubePlayerViewController.xib in Resources */,
 				5B9366A62215D79E00539965 /* Assets.xcassets in Resources */,
 				5B9366A42215D79B00539965 /* Main.storyboard in Resources */,
 				5B1781462218A3E4000758E4 /* AudioItemTableViewCell.xib in Resources */,
@@ -478,10 +511,13 @@
 			files = (
 				5B9366A12215D79B00539965 /* ViewController.swift in Sources */,
 				5B93669F2215D79B00539965 /* AppDelegate.swift in Sources */,
+				5B04D998221CA44400EE073C /* YoutubePlayerViewController.swift in Sources */,
 				5B17813B22189399000758E4 /* VideoViewController.swift in Sources */,
+				5B04D992221C979F00EE073C /* VideoItemTableViewCell.swift in Sources */,
 				5B1781442218A3CB000758E4 /* AudioItemTableViewCell.swift in Sources */,
 				5BFE03EA2219A0C20009F0C8 /* StreamPlayer.swift in Sources */,
 				5B17813922189382000758E4 /* AudioViewController.swift in Sources */,
+				5B04D995221C9BDB00EE073C /* ModelYoutubeVideoInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
