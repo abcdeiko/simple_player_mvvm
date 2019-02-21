@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YoutubePlayerViewController" customModule="player" customModuleProvider="target">
             <connections>
                 <outlet property="btnClose" destination="iu8-Qb-wMO" id="QUR-4e-9yA"/>
+                <outlet property="btnPlay" destination="Kyy-NB-IUX" id="48Y-lO-h0G"/>
                 <outlet property="view" destination="3sg-Zy-2mh" id="Edw-19-ccC"/>
                 <outlet property="viewTopControls" destination="1eM-VY-F95" id="Od7-hi-UQg"/>
             </connections>
@@ -22,36 +23,39 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1eM-VY-F95">
-                    <rect key="frame" x="0.0" y="20" width="375" height="55"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1eM-VY-F95">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playerControlClose" translatesAutoresizingMaskIntoConstraints="NO" id="J1I-TA-9AJ">
-                            <rect key="frame" x="16" y="20" width="30" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="30" id="8rn-LD-OaK"/>
-                            </constraints>
-                        </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iu8-Qb-wMO">
                             <rect key="frame" x="16" y="20" width="30" height="30"/>
-                            <state key="normal" title="Button"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="agh-SE-n2q"/>
+                                <constraint firstAttribute="height" constant="30" id="yjJ-uU-nV0"/>
+                            </constraints>
+                            <state key="normal" image="playerControlClose"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kyy-NB-IUX">
+                            <rect key="frame" x="151.5" y="287.5" width="72" height="72"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="72" id="TaP-ak-HAE"/>
+                                <constraint firstAttribute="width" constant="72" id="dkH-bq-nxW"/>
+                            </constraints>
+                            <state key="normal" image="playerControlPlay"/>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="iu8-Qb-wMO" firstAttribute="bottom" secondItem="J1I-TA-9AJ" secondAttribute="bottom" id="Pfx-yb-dYx"/>
-                        <constraint firstItem="J1I-TA-9AJ" firstAttribute="bottom" secondItem="Wlw-K9-X89" secondAttribute="bottom" constant="-5" id="ahC-tc-pkq"/>
-                        <constraint firstItem="J1I-TA-9AJ" firstAttribute="top" secondItem="Wlw-K9-X89" secondAttribute="top" constant="20" id="c6g-j5-pO1"/>
-                        <constraint firstItem="iu8-Qb-wMO" firstAttribute="trailing" secondItem="J1I-TA-9AJ" secondAttribute="trailing" id="eNj-WT-gpT"/>
-                        <constraint firstItem="iu8-Qb-wMO" firstAttribute="leading" secondItem="J1I-TA-9AJ" secondAttribute="leading" id="nnb-Jq-xVB"/>
-                        <constraint firstAttribute="height" constant="55" id="rbI-fO-v3I"/>
-                        <constraint firstItem="iu8-Qb-wMO" firstAttribute="top" secondItem="J1I-TA-9AJ" secondAttribute="top" id="xbf-ab-LOb"/>
-                        <constraint firstItem="J1I-TA-9AJ" firstAttribute="leading" secondItem="Wlw-K9-X89" secondAttribute="leading" constant="16" id="ykE-FT-V20"/>
+                        <constraint firstItem="iu8-Qb-wMO" firstAttribute="top" secondItem="Wlw-K9-X89" secondAttribute="top" constant="20" id="Atg-dJ-uGa"/>
+                        <constraint firstItem="iu8-Qb-wMO" firstAttribute="leading" secondItem="Wlw-K9-X89" secondAttribute="leading" constant="16" id="LQT-nv-vil"/>
+                        <constraint firstItem="Kyy-NB-IUX" firstAttribute="centerY" secondItem="Wlw-K9-X89" secondAttribute="centerY" id="UqI-vC-y1b"/>
+                        <constraint firstItem="Kyy-NB-IUX" firstAttribute="centerX" secondItem="Wlw-K9-X89" secondAttribute="centerX" id="a0i-92-nLB"/>
                     </constraints>
                     <viewLayoutGuide key="safeArea" id="Wlw-K9-X89"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="cZs-3U-3P8" firstAttribute="bottom" secondItem="1eM-VY-F95" secondAttribute="bottom" id="UPq-K4-na5"/>
                 <constraint firstItem="cZs-3U-3P8" firstAttribute="trailing" secondItem="1eM-VY-F95" secondAttribute="trailing" id="Whw-O9-84x"/>
                 <constraint firstItem="1eM-VY-F95" firstAttribute="leading" secondItem="cZs-3U-3P8" secondAttribute="leading" id="XPj-lp-zdk"/>
                 <constraint firstItem="1eM-VY-F95" firstAttribute="top" secondItem="cZs-3U-3P8" secondAttribute="top" id="m5w-vx-o6X"/>
@@ -62,5 +66,6 @@
     </objects>
     <resources>
         <image name="playerControlClose" width="48" height="48"/>
+        <image name="playerControlPlay" width="72" height="72"/>
     </resources>
 </document>

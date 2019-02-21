@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-//https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=PL6gx4Cwl9DGBsvRxJJOzG4r4k_zLKrnxl&key=AIzaSyAGoC8WLQ_mh9uiXc4fPrFa4f-P37oVyks
+
 
 class VideoViewController: UIViewController {
     

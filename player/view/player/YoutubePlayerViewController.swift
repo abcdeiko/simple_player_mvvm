@@ -14,6 +14,8 @@ class YoutubePlayerViewController: UIViewController {
     
     @IBOutlet weak var btnClose: UIButton!
     
+    @IBOutlet weak var btnPlay: UIButton!
+    
     @IBOutlet weak var viewTopControls: UIView!
     
     var videoId: String!
@@ -33,6 +35,8 @@ class YoutubePlayerViewController: UIViewController {
             self.playerLayer.frame = self.view.bounds
             self.view.layer.addSublayer(self.playerLayer)
             playerAV.play()
+            
+            self.view.bringSubviewToFront(self.viewTopControls)
         }
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(actionTap))
