@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B0311EC221F3246003A949A /* JSONYoutubeVideoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0311EB221F3246003A949A /* JSONYoutubeVideoItem.swift */; };
 		5B047239221DF6970054F43A /* YoutubeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B047238221DF6970054F43A /* YoutubeApi.swift */; };
 		5B04D992221C979F00EE073C /* VideoItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B04D990221C979F00EE073C /* VideoItemTableViewCell.swift */; };
 		5B04D993221C979F00EE073C /* VideoItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B04D991221C979F00EE073C /* VideoItemTableViewCell.xib */; };
@@ -55,6 +56,7 @@
 		3B1D934CA4E0F91207E0A141 /* Pods_playerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_playerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B2DF501335A084ED785A052 /* Pods-playerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-playerTests/Pods-playerTests.release.xcconfig"; sourceTree = "<group>"; };
 		503F8FD2C31B41352F883FF4 /* Pods-player.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-player.debug.xcconfig"; path = "Pods/Target Support Files/Pods-player/Pods-player.debug.xcconfig"; sourceTree = "<group>"; };
+		5B0311EB221F3246003A949A /* JSONYoutubeVideoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONYoutubeVideoItem.swift; sourceTree = "<group>"; };
 		5B047238221DF6970054F43A /* YoutubeApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeApi.swift; sourceTree = "<group>"; };
 		5B04D990221C979F00EE073C /* VideoItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoItemTableViewCell.swift; sourceTree = "<group>"; };
 		5B04D991221C979F00EE073C /* VideoItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoItemTableViewCell.xib; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 			children = (
 				5B04D994221C9BDB00EE073C /* ModelYoutubeVideoInfo.swift */,
 				5B047238221DF6970054F43A /* YoutubeApi.swift */,
+				5B0311EB221F3246003A949A /* JSONYoutubeVideoItem.swift */,
 			);
 			path = youtube;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				5B9366A12215D79B00539965 /* ViewController.swift in Sources */,
 				5B93669F2215D79B00539965 /* AppDelegate.swift in Sources */,
 				5B04D998221CA44400EE073C /* YoutubePlayerViewController.swift in Sources */,
+				5B0311EC221F3246003A949A /* JSONYoutubeVideoItem.swift in Sources */,
 				5B17813B22189399000758E4 /* VideoViewController.swift in Sources */,
 				5B04D992221C979F00EE073C /* VideoItemTableViewCell.swift in Sources */,
 				5B1781442218A3CB000758E4 /* AudioItemTableViewCell.swift in Sources */,
@@ -710,7 +714,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 68W29BK72R;
+				DEVELOPMENT_TEAM = NDV8N5TK49;
 				INFOPLIST_FILE = player/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -730,7 +734,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 68W29BK72R;
+				DEVELOPMENT_TEAM = NDV8N5TK49;
 				INFOPLIST_FILE = player/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
