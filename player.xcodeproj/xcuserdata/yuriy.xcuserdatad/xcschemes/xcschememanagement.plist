@@ -3,11 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>SchemeUserState</key>
+	<dict/>
+	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>player.xcscheme_^#shared#^_</key>
+		<key>5B93669A2215D79B00539965</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>5</integer>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5B9366AE2215D79E00539965</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5B9366B92215D79E00539965</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

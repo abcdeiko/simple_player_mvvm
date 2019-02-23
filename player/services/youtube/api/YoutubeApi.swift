@@ -9,9 +9,9 @@
 import Foundation
 
 
-class YoutubeApi {
-    func getPlaylist(callback: @escaping (JSONYoutubeVideoItem?, Error?) -> Void) {
-        guard let apiURL = URL(string: "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=PL6gx4Cwl9DGBsvRxJJOzG4r4k_zLKrnxl&key=AIzaSyAGoC8WLQ_mh9uiXc4fPrFa4f-P37oVyks") else {
+class YoutubeApi: YoutubeApiProtocol {
+    func getPlaylist(callback: @escaping (JSONYoutubeVideoList?, Error?) -> Void) {
+        guard let apiURL = URL(string: "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=PLB03EA9545DD188C3&key=AIzaSyAGoC8WLQ_mh9uiXc4fPrFa4f-P37oVyks") else {
             return
         }
         
@@ -21,13 +21,12 @@ class YoutubeApi {
 
         let task = session.dataTask(with: request) { (data, response, networkError) in
             
-            let result: [JSONYoutubeVideoItem]?
+            let result: JSONYoutubeVideoList?
             let error: Error?
             
             do {
-                if let data = data {
-                    JSONDecoder.decode(<#T##JSONDecoder#>)
-                    result = try JSONDecoder().decode(JSONYoutubeVideoItem.self, from: data)
+                if let data = data {                    
+                    result = try JSONDecoder().decode(JSONYoutubeVideoList.self, from: data)
                 } else {
                     result = nil
                 }

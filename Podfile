@@ -2,7 +2,7 @@
 platform :ios, '11.0'
 
 target 'player' do
-  use_frameworks!
+    use_frameworks!
   
   pod 'XCDYouTubeKit', '~> 2.7'
   pod 'SDWebImage', '~> 4.4'

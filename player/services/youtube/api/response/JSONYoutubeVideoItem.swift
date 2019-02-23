@@ -9,8 +9,8 @@
 import Foundation
 
 struct JSONYoutubeVideoItem: Codable {
-    let thumbnailUrl: String?
-    let title: String?
+    let thumbnailUrl: String
+    let title: String
     let videoId: String
     
     enum CodingKeys: String, CodingKey {
@@ -31,8 +31,8 @@ struct JSONYoutubeVideoItem: Codable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let snippet = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .snippet)
-        let thumbnail = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .thumbnails).nestedContainer(keyedBy: CodingKeys.self, forKey: .thumbnail)
-        let videoResource = try container.nestedContainer(keyedBy: CodingKeys.self, forKey: .videoResource)
+        let thumbnail = try snippet.nestedContainer(keyedBy: CodingKeys.self, forKey: .thumbnails).nestedContainer(keyedBy: CodingKeys.self, forKey: .thumbnail)
+        let videoResource = try snippet.nestedContainer(keyedBy: CodingKeys.self, forKey: .videoResource)
         
         self.title = try snippet.decode(String.self, forKey: .title)
         self.thumbnailUrl = try thumbnail.decode(String.self, forKey: .thumbnailUrl)
