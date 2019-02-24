@@ -1,11 +1,3 @@
-//
-//  VideoItemTableViewCell.swift
-//  player
-//
-//  Created by Yuriy on 19/02/2019.
-//  Copyright © 2019 kbshko. All rights reserved.
-//
-
 import UIKit
 
 class VideoItemTableViewCell: UITableViewCell {

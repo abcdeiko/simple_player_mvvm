@@ -1,14 +1,6 @@
-//
-//  ViewController.swift
-//  player
-//
-//  Created by Yuriy on 14/02/2019.
-//  Copyright © 2019 kbshko. All rights reserved.
-//
-
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: BaseViewController {
     
     private static let INDEX_AUDIO: Int = 0
     private static let INDEX_VIDEO: Int = 1
@@ -36,14 +28,14 @@ class ViewController: UIViewController {
         
         switch sender.selectedSegmentIndex {
         case ViewController.INDEX_AUDIO:
-            newVC = AudioViewController(nibName: "AudioViewController", bundle: nil)
+            newVC = self.diResolver.audioListView()
         case ViewController.INDEX_VIDEO:
-            newVC = VideoViewController(nibName: "VideoViewController", bundle: nil)
+            newVC = self.diResolver.videoListView()
         default:
             return
         }
         
-        // emulate VC lifecycle
+        // эмулируем жиненный цикл UIViewController
         if let currentVC = currentVC {
             currentVC.willMove(toParent: nil)
             currentVC.view.removeFromSuperview()

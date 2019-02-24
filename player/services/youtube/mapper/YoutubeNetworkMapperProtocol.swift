@@ -9,5 +9,5 @@
 import Foundation
 
 protocol YoutubeNetworkMapperProtocol {
-    func map(_ list: JSONYoutubeVideoList?) -> [ModelYoutubeVideoInfo]?
+    func map(_ list: JSONYoutubeVideoList) -> [ModelYoutubeVideoInfo]
 }

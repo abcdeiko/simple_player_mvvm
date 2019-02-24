@@ -1,16 +1,8 @@
-//
-//  YoutubePlayerViewController.swift
-//  player
-//
-//  Created by Yuriy on 19/02/2019.
-//  Copyright © 2019 kbshko. All rights reserved.
-//
-
 import UIKit
 import AVFoundation
 import XCDYouTubeKit
 
-class YoutubePlayerViewController: UIViewController {
+class YoutubePlayerViewController: BaseViewController {
     
     @IBOutlet weak var btnClose: UIButton!
     

@@ -6,6 +6,9 @@ target 'player' do
   
   pod 'XCDYouTubeKit', '~> 2.7'
   pod 'SDWebImage', '~> 4.4'
+  pod 'RxSwift', '~> 4.4'
+  pod 'RxCocoa', '~> 4.4'
+  pod 'RxDataSources', '~> 3.1'
 
   
 

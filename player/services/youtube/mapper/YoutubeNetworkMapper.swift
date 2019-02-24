@@ -8,8 +8,8 @@
 
 import Foundation
 
-class YoutubeNetworkMapper {
-    func map(_ list: JSONYoutubeVideoList?) -> [ModelYoutubeVideoInfo]? {
-        return list?.items.map { ModelYoutubeVideoInfo(title: $0.title, thumbnailUrl: $0.thumbnailUrl, videoId: $0.videoId) }
+class YoutubeNetworkMapper: YoutubeNetworkMapperProtocol {
+    func map(_ list: JSONYoutubeVideoList) -> [ModelYoutubeVideoInfo] {
+        return list.items.map { ModelYoutubeVideoInfo(title: $0.title, thumbnailUrl: $0.thumbnailUrl, videoId: $0.videoId) }
     }
 }

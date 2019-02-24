@@ -24,6 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(error)
         }
         
+        if let vc = self.window?.rootViewController as? BaseViewController {
+            DIResolver().inject(vc)
+        }
+        
         return true
     }
 

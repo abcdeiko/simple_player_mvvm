@@ -1,11 +1,3 @@
-//
-//  AudioItemTableViewCell.swift
-//  player
-//
-//  Created by Yuriy on 16/02/2019.
-//  Copyright © 2019 kbshko. All rights reserved.
-//
-
 import UIKit
 
 class AudioItemTableViewCell: UITableViewCell {
@@ -21,6 +13,5 @@ class AudioItemTableViewCell: UITableViewCell {
         // Initialization code
         
         selectionStyle = .none
-        labelTitle.text = "adsf"        
     }
 }

@@ -1,35 +1,42 @@
-//
-//  VideoViewController.swift
-//  player
-//
-//  Created by Yuriy on 16/02/2019.
-//  Copyright © 2019 kbshko. All rights reserved.
-//
-
 import UIKit
 import SDWebImage
+import RxSwift
+import RxCocoa
 
-
-
-class VideoViewController: UIViewController {
-    
-    let items: [ModelYoutubeVideoInfo] = [
-        ModelYoutubeVideoInfo(
-            title: "Android App Development for Beginners - 1 - Introduction",
-            thumbnailUrl: "https://i.ytimg.com/vi/QAbQgLGKd3Y/sddefault.jpg",
-            videoId: "QAbQgLGKd3Y"
-        ),
-        ModelYoutubeVideoInfo(
-            title: "Android App Development for Beginners - 2 - Installing Android Studio",
-            thumbnailUrl: "https://i.ytimg.com/vi/zEsDwzjPJ5c/sddefault.jpg",
-            videoId: "zEsDwzjPJ5c")
-    ]
+class VideoViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureView()
+        
+        let viewModel = self.diResolver.videoListViewModel()
+        
+        // подписываемся на отображение загруженных элементов
+        viewModel.videos
+            .observeOn(MainScheduler.instance)
+            .bind(to: tableView.rx.items(cellIdentifier: VideoItemTableViewCell.CELL_IDENTIFIER, cellType: VideoItemTableViewCell.self)) { [weak self] (_, element, cell) in
+                self?.configure(cell: cell, model: element)
+            }
+            .disposed(by: self.disposeBag)
+        
+        // первый раз релоадим таблицу самостоятельно
+        viewModel.reload.onNext(())
+        
+        // обработка нажатия на элемент
+        tableView.rx.modelSelected(VideoItemViewModel.self)
+        .bind(to: viewModel.selectVideo)
+        .disposed(by: self.disposeBag)
+        
+        // открытие плеера
+        viewModel.showVideoById            
+            .subscribe(onNext: { [weak self] in
+                self?.presentPlayerWith(videoId: $0)
+            })
+            .disposed(by: self.disposeBag)
     }
     
     private func configureView() {
@@ -42,35 +49,31 @@ class VideoViewController: UIViewController {
         )
         
         tableView.delegate = self
-        tableView.dataSource = self
         tableView.tableFooterView = UIView()
+    }
+    
+    private func presentPlayerWith(videoId: String) {
+        let vc = YoutubePlayerViewController(nibName: "YoutubePlayerViewController", bundle: nil)
+        vc.videoId = videoId
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    private func configure(cell: VideoItemTableViewCell, model: VideoItemViewModel) {
+        cell.labelTitle.text = model.title
+        
+        if let thumbUrl = model.thumbnailUrl {
+            cell.imageThumbnail!.sd_setImage(
+                with: URL(string: thumbUrl),
+                placeholderImage: UIImage(named: "videoPlaceholder"),
+                options: [],
+                completed: nil
+            )
+        }
     }
 }
 
 extension VideoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = YoutubePlayerViewController(nibName: "YoutubePlayerViewController", bundle: nil)
-        vc.videoId = items[indexPath.row].videoId
-        self.present(vc, animated: true, completion: nil)
-    }
-}
-
-extension VideoViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: VideoItemTableViewCell! = tableView.dequeueReusableCell(withIdentifier: VideoItemTableViewCell.CELL_IDENTIFIER) as? VideoItemTableViewCell
-        
-        if let thumbUrl = items[indexPath.row].thumbnailUrl {
-            cell.imageThumbnail!.sd_setImage(with: URL(string: thumbUrl), placeholderImage: UIImage(named: "videoPlaceholder"), options: [], completed: nil)
-        }
-        
-        return cell
     }
 }
