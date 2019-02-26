@@ -13,6 +13,9 @@ protocol AudiolistDIResolver {
 }
 
 class DIResolver: Resolver {
+    
+    private lazy var player = StreamPlayer()
+    
     func inject(_ vc: BaseViewController) {
         vc.diResolver = self
     }
@@ -44,7 +47,8 @@ class DIResolver: Resolver {
     func audioListViewModel() -> AudioListViewModel {
         return AudioListViewModel(
             radioListProvider: RadioStreamsProvider(),
-            viewModelMapper: AudioListViewModelMapper()
+            viewModelMapper: AudioListViewModelMapper(),
+            player: self.player
         )
     }
 }

@@ -10,6 +10,6 @@ import Foundation
 
 class AudioListViewModelMapper: AudioListViewModelMapperProtocol {
     func map(_ items: [RadioStreamModel]) -> [AudioItemViewModel] {
-        return items.map { AudioItemViewModel(title: $0.title, url: $0.url) }
+        return items.map { AudioItemViewModel(title: $0.title, url: $0.url, playing: false) }
     }
 }

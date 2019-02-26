@@ -9,11 +9,13 @@
 import Foundation
 
 class AudioItemViewModel {
-    let title: String
+    var title: String
     let url: String
+    var playing: Bool
     
-    init(title: String, url: String) {
+    init(title: String, url: String, playing: Bool) {
         self.title = title
         self.url = url
+        self.playing = playing
     }
 }

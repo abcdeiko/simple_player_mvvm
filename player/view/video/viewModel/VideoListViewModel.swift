@@ -26,6 +26,7 @@ class VideoListViewModel {
         let _selectVideo = PublishSubject<VideoItemViewModel>()
         self.selectVideo = _selectVideo.asObserver()
         
+        // обработка нажатия на элемент с видео
         self.showVideoById = _selectVideo.asObservable()
             .map { $0.videoId }        
     }
