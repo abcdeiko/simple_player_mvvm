@@ -38,9 +38,7 @@ class StreamPlayer {
     
     func playAudio(streamURL: String) -> Observable<StreamPlayerItem> {
         guard let url = URL(string: streamURL) else {
-            return Observable.create { _ in
-                return Disposables.create()
-            }
+            return Observable.empty()
         }
         
         let newPlayer = AVPlayer(url: url)
@@ -56,12 +54,30 @@ class StreamPlayer {
         }
     }
     
-    func getPlayingItems() -> Observable<[StreamPlayerItem]> {
+    func stopAudio(streamURL: String) -> Observable<StreamPlayerItem> {
+        guard let player = self.currentPlayingAudio[streamURL] else {
+            return Observable.empty()
+        }
+        
+        player.pause()
+        
+        self.currentPlayingAudio.removeValue(forKey: streamURL)
+      
+        return Observable.create {
+            let result = StreamPlayerItem(url: streamURL, state: .stopped)
+            
+            $0.onNext(result)
+            
+            return Disposables.create()
+        }
+    }
+    
+    func getPlayingItems() -> [StreamPlayerItem] {
         let items = self.currentPlayingAudio.map {
             StreamPlayerItem(url: $0.key, state: .playing)
         }
         
-        return Observable.just(items)
+        return items
     }
     
     @objc func playedFinishedWithError(_ sender: AnyObject) {
