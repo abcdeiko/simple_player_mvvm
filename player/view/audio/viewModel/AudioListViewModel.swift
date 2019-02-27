@@ -40,8 +40,6 @@ class AudioListViewModel {
             .flatMap {
                 ($0.playing ? weakPlayer?.stopAudio(streamURL: $0.url): weakPlayer?.playAudio(streamURL: $0.url)) ?? Observable.empty()
             }
-            .subscribe(onNext: { [weak self] (_) in
-                _reload.onNext(())
-            })
+            .subscribe(onNext: { (_) in  _reload.onNext(()) })
     }
 }

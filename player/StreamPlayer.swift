@@ -25,25 +25,39 @@ class StreamPlayerItem {
     }
 }
 
-class StreamPlayer {
-    private lazy var currentPlayingAudio: [String: AVPlayer] = [:]
+class StreamPlayer: NSObject {
+    private static var playerContext = 0
     
-    init() {
-        NotificationCenter.default.addObserver(
-            self, selector: #selector(playedFinishedWithError(_:)),
-            name: NSNotification.Name.AVPlayerItemFailedToPlayToEndTime,
-            object: nil
-        )
+    private lazy var currentPlayingAudio: [String: AVPlayer] = [:]
+    private let _itemStatus: AnyObserver<StreamPlayerItem>
+    
+    let itemStatus: Observable<StreamPlayerItem>
+    
+    override init() {
+        var statusSubject = PublishSubject<StreamPlayer>()
+    //    self._itemStatus = statusSubject.asObserver()
+        self.itemStatus = statusSubject.asObservable()
+        
+        super.init()
     }
+  
     
     func playAudio(streamURL: String) -> Observable<StreamPlayerItem> {
         guard let url = URL(string: streamURL) else {
             return Observable.empty()
         }
+        let playerItem = AVPlayerItem(url: url)
         
-        let newPlayer = AVPlayer(url: url)
-        self.currentPlayingAudio[streamURL] = newPlayer
+        playerItem.addObserver(
+            self,
+            forKeyPath: #keyPath(AVPlayerItem.status),
+            options: [.new], context: &StreamPlayer.playerContext)
+        
+        let newPlayer = AVPlayer(playerItem: playerItem)
         newPlayer.play()
+        
+        self.currentPlayingAudio[streamURL] = newPlayer
+        
         
         return Observable.create {
             let result = StreamPlayerItem(url: streamURL, state: newPlayer.status == .failed ? .stopped: .playing)
@@ -80,7 +94,29 @@ class StreamPlayer {
         return items
     }
     
-    @objc func playedFinishedWithError(_ sender: AnyObject) {
-        print("adf")
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        
+        guard context == &StreamPlayer.playerContext,
+            let playerItem = object as? AVPlayerItem,
+            let url = (playerItem.asset as? AVURLAsset)?.url else {
+                
+            super.observeValue(forKeyPath: keyPath,
+                               of: object,
+                               change: change,
+                               context: context)
+            return
+        }
+        
+        print("player item \(url)")
+        
+            
+        switch playerItem.status {
+        case .readyToPlay:
+            print("player item playing")
+        case .failed:
+            print("player item Failed")
+        case .unknown:
+            print("player item Unknown")
+        }
     }
 }

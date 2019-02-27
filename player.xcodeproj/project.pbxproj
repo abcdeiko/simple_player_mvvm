@@ -120,6 +120,7 @@
 		5B9366BA2215D79E00539965 /* playerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = playerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9366BE2215D79E00539965 /* playerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playerUITests.swift; sourceTree = "<group>"; };
 		5B9366C02215D79E00539965 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BA9C1C9222725D600442B96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5BFE03E92219A0C20009F0C8 /* StreamPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamPlayer.swift; sourceTree = "<group>"; };
 		5BFE4DF62222A8CA00F7157C /* VideoItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoItemViewModel.swift; sourceTree = "<group>"; };
 		5BFE4DFA2222A9CF00F7157C /* VideoListViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewModelMapper.swift; sourceTree = "<group>"; };
@@ -745,6 +746,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				5B1781372218915C000758E4 /* ru */,
+				5BA9C1C9222725D600442B96 /* Base */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
