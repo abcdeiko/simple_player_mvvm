@@ -29,15 +29,14 @@ class StreamPlayer: NSObject {
     private static var playerContext = 0
     
     private lazy var currentPlayingAudio: [String: AVPlayer] = [:]
-    private let _itemStatus: AnyObserver<StreamPlayerItem>
+    private let itemStatusSubject: PublishSubject<StreamPlayerItem>
     
-    let itemStatus: Observable<StreamPlayerItem>
+    var itemStatus: Observable<StreamPlayerItem> {
+        get { return self.itemStatusSubject.asObserver() }
+    }
     
     override init() {
-        var statusSubject = PublishSubject<StreamPlayer>()
-    //    self._itemStatus = statusSubject.asObserver()
-        self.itemStatus = statusSubject.asObservable()
-        
+        self.itemStatusSubject = PublishSubject<StreamPlayerItem>()
         super.init()
     }
   
@@ -107,16 +106,14 @@ class StreamPlayer: NSObject {
             return
         }
         
-        print("player item \(url)")
-        
-            
-        switch playerItem.status {
-        case .readyToPlay:
-            print("player item playing")
-        case .failed:
-            print("player item Failed")
-        case .unknown:
-            print("player item Unknown")
+        // если не получилось проиграть, то убираем из списка проигрываемых
+        if playerItem.status == .failed {
+            self.currentPlayingAudio.removeValue(forKey: url.absoluteString)
         }
+        
+        // формируем и отправляем информацию о новом статусе проигрываемого элемента
+        let statusItem = StreamPlayerItem(url: url.absoluteString, state: playerItem.status == .failed ? .stopped: .playing)
+        
+        self.itemStatusSubject.onNext(statusItem)
     }
 }

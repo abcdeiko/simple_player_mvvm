@@ -41,5 +41,10 @@ class AudioListViewModel {
                 ($0.playing ? weakPlayer?.stopAudio(streamURL: $0.url): weakPlayer?.playAudio(streamURL: $0.url)) ?? Observable.empty()
             }
             .subscribe(onNext: { (_) in  _reload.onNext(()) })
+        
+        // подписываемся на события от плеера
+        player.itemStatus.subscribe(onNext: { (_) in
+            _reload.onNext(())
+        })
     }
 }

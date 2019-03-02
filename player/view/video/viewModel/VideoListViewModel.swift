@@ -21,7 +21,9 @@ class VideoListViewModel {
         // загружаем список видео и конвертируем в нужную viewModel
         self.videos = _reload
             .flatMap { videoListProvider.getPlaylistVideos() }
+            .asDriver(onErrorJustReturn: [])
             .map { viewModelMapper.map($0) }
+            .asObservable()
         
         let _selectVideo = PublishSubject<VideoItemViewModel>()
         self.selectVideo = _selectVideo.asObserver()
