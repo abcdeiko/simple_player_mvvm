@@ -22,7 +22,7 @@ class YoutubePlayerViewController: BaseViewController {
         
         viewTopControls.isHidden = true
             
-        let viewModel = YoutubeViewModel(player: StreamPlayer(), videoProvider: YoutubeVideoProvider())
+        let viewModel = self.diResolver.youtubePlayerViewModel()
         
         viewModel.showVideoLayer
             .subscribe(onNext: { [weak self] in
