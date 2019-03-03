@@ -1,6 +1,7 @@
 import UIKit
 import AVFoundation
 import XCDYouTubeKit
+import RxSwift
 
 class YoutubePlayerViewController: BaseViewController {
     
@@ -13,28 +14,47 @@ class YoutubePlayerViewController: BaseViewController {
     var videoId: String!
     
     private var playerLayer: AVPlayerLayer!
+    
+    private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         viewTopControls.isHidden = true
-        
-        XCDYouTubeClient.default().getVideoWithIdentifier(videoId) { [weak self] (video, error) in
-            guard let self = self, let streamUrl = video?.streamURLs[XCDYouTubeVideoQuality.medium360.rawValue] else { return }
-
-            let playerAV = AVPlayer(url: streamUrl)
-            self.playerLayer = AVPlayerLayer(player: playerAV)
-            self.playerLayer.frame = self.view.bounds
-            self.view.layer.addSublayer(self.playerLayer)
-            playerAV.play()
             
-            self.view.bringSubviewToFront(self.viewTopControls)
-        }
+        let viewModel = YoutubeViewModel(player: StreamPlayer(), videoProvider: YoutubeVideoProvider())
+        
+        viewModel.showVideoLayer
+            .subscribe(onNext: { [weak self] in
+                guard let self = self else { return }
+                
+                self.playerLayer = $0
+                self.playerLayer.frame = self.view.bounds
+                self.view.layer.addSublayer(self.playerLayer)
+                self.view.bringSubviewToFront(self.viewTopControls)
+            })
+            .disposed(by: self.disposeBag)
+        
+        viewModel.close
+            .subscribe(onNext: { [weak self] in
+                guard let self = self else { return }
+                
+                self.playerLayer.removeFromSuperlayer()
+                self.dismiss(animated: true, completion: nil)
+            })
+            .disposed(by: self.disposeBag)
+        
+        self.btnClose.rx
+            .tap
+            .bind(to: viewModel.stopVideo)
+            .disposed(by: self.disposeBag)
+        
+        
+        
+        viewModel.playVideo.onNext(self.videoId)        
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(actionTap))
         self.view.addGestureRecognizer(tapRecognizer)
-        
-        self.btnClose.addTarget(self, action: #selector(actionClose), for: .touchUpInside)
     }
     
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -43,10 +63,6 @@ class YoutubePlayerViewController: BaseViewController {
         coordinator.animate(alongsideTransition: nil) { (context) in
             self.playerLayer.frame = self.view.bounds
         }
-    }
-    
-    @objc private func actionClose() {
-        self.dismiss(animated: true, completion: nil)
     }
     
     @objc private func actionTap() {

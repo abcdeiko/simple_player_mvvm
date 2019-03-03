@@ -22,14 +22,15 @@
 		5B06899F2223357500A48A79 /* AudioListViewModelMapperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B06899E2223357500A48A79 /* AudioListViewModelMapperProtocol.swift */; };
 		5B071A5922205EBD00BA7FA7 /* JSONYoutubeVideoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B071A5822205EBD00BA7FA7 /* JSONYoutubeVideoList.swift */; };
 		5B075A5B2221E5BB00261961 /* YoutubeApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B075A5A2221E5BB00261961 /* YoutubeApiProtocol.swift */; };
-		5B075A5D2221E5E200261961 /* YoutubeDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B075A5C2221E5E200261961 /* YoutubeDataProvider.swift */; };
-		5B075A5F2221E5F200261961 /* YoutubeDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B075A5E2221E5F200261961 /* YoutubeDataProviderProtocol.swift */; };
+		5B075A5D2221E5E200261961 /* VideoListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B075A5C2221E5E200261961 /* VideoListDataProvider.swift */; };
+		5B075A5F2221E5F200261961 /* VideoListDataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B075A5E2221E5F200261961 /* VideoListDataProviderProtocol.swift */; };
 		5B075A632221E72000261961 /* YoutubeNetworkMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B075A622221E72000261961 /* YoutubeNetworkMapper.swift */; };
 		5B075A652221E7E800261961 /* YoutubeNetworkMapperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B075A642221E7E800261961 /* YoutubeNetworkMapperProtocol.swift */; };
 		5B075A682221EC0900261961 /* DIResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B075A672221EC0900261961 /* DIResolver.swift */; };
 		5B075A6B2221EE5200261961 /* RadioStreamsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B075A6A2221EE5200261961 /* RadioStreamsProvider.swift */; };
 		5B075A6D2221EE5F00261961 /* RadioStreamsProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B075A6C2221EE5F00261961 /* RadioStreamsProviderProtocol.swift */; };
 		5B075A6F2221EEE600261961 /* VideoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B075A6E2221EEE600261961 /* VideoListViewModel.swift */; };
+		5B156CEA222B2DDD00B61817 /* YoutubeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B156CE9222B2DDD00B61817 /* YoutubeViewModel.swift */; };
 		5B1781322218911B000758E4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B1781342218911B000758E4 /* Localizable.strings */; };
 		5B17813922189382000758E4 /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B17813822189382000758E4 /* AudioViewController.swift */; };
 		5B17813B22189399000758E4 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B17813A22189399000758E4 /* VideoViewController.swift */; };
@@ -49,6 +50,8 @@
 		5BFE4DFB2222A9CF00F7157C /* VideoListViewModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFE4DFA2222A9CF00F7157C /* VideoListViewModelMapper.swift */; };
 		5BFE4DFD2222A9DF00F7157C /* VideoListViewModelMapperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFE4DFC2222A9DF00F7157C /* VideoListViewModelMapperProtocol.swift */; };
 		5BFE4DFF2222BF8000F7157C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFE4DFE2222BF8000F7157C /* BaseViewController.swift */; };
+		5BFE6CBE222C4C91008656F1 /* YoutubeVideoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFE6CBD222C4C91008656F1 /* YoutubeVideoProvider.swift */; };
+		5BFE6CC0222C4E83008656F1 /* YoutubeVideoProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFE6CBF222C4E83008656F1 /* YoutubeVideoProviderProtocol.swift */; };
 		5BFEE685221D14A800E00809 /* YoutubePlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BFEE684221D14A800E00809 /* YoutubePlayerViewController.xib */; };
 		8DDCA93CC89FADE6C806B614 /* Pods_playerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FB600A0616075D59707293B /* Pods_playerTests.framework */; };
 /* End PBXBuildFile section */
@@ -90,14 +93,15 @@
 		5B075A542221DEF600261961 /* libXCDYouTubeKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libXCDYouTubeKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B075A562221DEFB00261961 /* libSDWebImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libSDWebImage.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B075A5A2221E5BB00261961 /* YoutubeApiProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeApiProtocol.swift; sourceTree = "<group>"; };
-		5B075A5C2221E5E200261961 /* YoutubeDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeDataProvider.swift; sourceTree = "<group>"; };
-		5B075A5E2221E5F200261961 /* YoutubeDataProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeDataProviderProtocol.swift; sourceTree = "<group>"; };
+		5B075A5C2221E5E200261961 /* VideoListDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListDataProvider.swift; sourceTree = "<group>"; };
+		5B075A5E2221E5F200261961 /* VideoListDataProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListDataProviderProtocol.swift; sourceTree = "<group>"; };
 		5B075A622221E72000261961 /* YoutubeNetworkMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeNetworkMapper.swift; sourceTree = "<group>"; };
 		5B075A642221E7E800261961 /* YoutubeNetworkMapperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeNetworkMapperProtocol.swift; sourceTree = "<group>"; };
 		5B075A672221EC0900261961 /* DIResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIResolver.swift; sourceTree = "<group>"; };
 		5B075A6A2221EE5200261961 /* RadioStreamsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioStreamsProvider.swift; sourceTree = "<group>"; };
 		5B075A6C2221EE5F00261961 /* RadioStreamsProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioStreamsProviderProtocol.swift; sourceTree = "<group>"; };
 		5B075A6E2221EEE600261961 /* VideoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewModel.swift; sourceTree = "<group>"; };
+		5B156CE9222B2DDD00B61817 /* YoutubeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeViewModel.swift; sourceTree = "<group>"; };
 		5B1781352218915C000758E4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		5B1781362218915C000758E4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		5B1781372218915C000758E4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 		5BFE4DFA2222A9CF00F7157C /* VideoListViewModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewModelMapper.swift; sourceTree = "<group>"; };
 		5BFE4DFC2222A9DF00F7157C /* VideoListViewModelMapperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewModelMapperProtocol.swift; sourceTree = "<group>"; };
 		5BFE4DFE2222BF8000F7157C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		5BFE6CBD222C4C91008656F1 /* YoutubeVideoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeVideoProvider.swift; sourceTree = "<group>"; };
+		5BFE6CBF222C4E83008656F1 /* YoutubeVideoProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeVideoProviderProtocol.swift; sourceTree = "<group>"; };
 		5BFEE684221D14A800E00809 /* YoutubePlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = YoutubePlayerViewController.xib; sourceTree = "<group>"; };
 		85304F0F137AC68AD4E6564E /* Pods-playerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-playerUITests/Pods-playerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8F96E7E937864C1154E1C6B6 /* Pods-playerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-playerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-playerUITests/Pods-playerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -175,6 +181,7 @@
 		5B04D996221CA42A00EE073C /* player */ = {
 			isa = PBXGroup;
 			children = (
+				5B156CE8222B2DC600B61817 /* viewModel */,
 				5B04D997221CA44400EE073C /* YoutubePlayerViewController.swift */,
 				5BFEE684221D14A800E00809 /* YoutubePlayerViewController.xib */,
 			);
@@ -184,7 +191,6 @@
 		5B0689932223198C00A48A79 /* viewModel */ = {
 			isa = PBXGroup;
 			children = (
-				5B06899B2223354600A48A79 /* mapper */,
 				5B0689942223199E00A48A79 /* AudioListViewModel.swift */,
 				5B068996222333CB00A48A79 /* AudioItemViewModel.swift */,
 			);
@@ -199,23 +205,14 @@
 			path = models;
 			sourceTree = "<group>";
 		};
-		5B06899B2223354600A48A79 /* mapper */ = {
-			isa = PBXGroup;
-			children = (
-				5B06899C2223356A00A48A79 /* AudioListViewModelMapper.swift */,
-				5B06899E2223357500A48A79 /* AudioListViewModelMapperProtocol.swift */,
-			);
-			path = mapper;
-			sourceTree = "<group>";
-		};
-		5B075A582221E59200261961 /* api */ = {
+		5B075A582221E59200261961 /* network */ = {
 			isa = PBXGroup;
 			children = (
 				5B075A592221E5A500261961 /* response */,
 				5B047238221DF6970054F43A /* YoutubeApi.swift */,
 				5B075A5A2221E5BB00261961 /* YoutubeApiProtocol.swift */,
 			);
-			path = api;
+			path = network;
 			sourceTree = "<group>";
 		};
 		5B075A592221E5A500261961 /* response */ = {
@@ -235,15 +232,6 @@
 			path = models;
 			sourceTree = "<group>";
 		};
-		5B075A612221E70800261961 /* mapper */ = {
-			isa = PBXGroup;
-			children = (
-				5B075A622221E72000261961 /* YoutubeNetworkMapper.swift */,
-				5B075A642221E7E800261961 /* YoutubeNetworkMapperProtocol.swift */,
-			);
-			path = mapper;
-			sourceTree = "<group>";
-		};
 		5B075A662221EBDD00261961 /* di */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,14 +240,67 @@
 			path = di;
 			sourceTree = "<group>";
 		};
-		5B075A692221EE4300261961 /* radio */ = {
+		5B075A692221EE4300261961 /* audio */ = {
 			isa = PBXGroup;
 			children = (
 				5B0689982223347700A48A79 /* models */,
 				5B075A6A2221EE5200261961 /* RadioStreamsProvider.swift */,
 				5B075A6C2221EE5F00261961 /* RadioStreamsProviderProtocol.swift */,
 			);
-			path = radio;
+			path = audio;
+			sourceTree = "<group>";
+		};
+		5B156CE3222AF9CE00B61817 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				5BFE6CB8222C30E9008656F1 /* video */,
+				5B156CE7222AFAD900B61817 /* player */,
+				5B156CE4222AFA6E00B61817 /* view mapper */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		5B156CE4222AFA6E00B61817 /* view mapper */ = {
+			isa = PBXGroup;
+			children = (
+				5B156CE6222AFA9200B61817 /* audio */,
+				5B156CE5222AFA8C00B61817 /* video */,
+			);
+			path = "view mapper";
+			sourceTree = "<group>";
+		};
+		5B156CE5222AFA8C00B61817 /* video */ = {
+			isa = PBXGroup;
+			children = (
+				5BFE4DFA2222A9CF00F7157C /* VideoListViewModelMapper.swift */,
+				5BFE4DFC2222A9DF00F7157C /* VideoListViewModelMapperProtocol.swift */,
+			);
+			path = video;
+			sourceTree = "<group>";
+		};
+		5B156CE6222AFA9200B61817 /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				5B06899C2223356A00A48A79 /* AudioListViewModelMapper.swift */,
+				5B06899E2223357500A48A79 /* AudioListViewModelMapperProtocol.swift */,
+			);
+			path = audio;
+			sourceTree = "<group>";
+		};
+		5B156CE7222AFAD900B61817 /* player */ = {
+			isa = PBXGroup;
+			children = (
+				5BFE03E92219A0C20009F0C8 /* StreamPlayer.swift */,
+			);
+			path = player;
+			sourceTree = "<group>";
+		};
+		5B156CE8222B2DC600B61817 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5B156CE9222B2DDD00B61817 /* YoutubeViewModel.swift */,
+			);
+			path = viewModel;
 			sourceTree = "<group>";
 		};
 		5B17812F2218872C000758E4 /* view */ = {
@@ -332,14 +373,14 @@
 			isa = PBXGroup;
 			children = (
 				5B075A662221EBDD00261961 /* di */,
-				5BFE03EB2219F3AA0009F0C8 /* services */,
+				5BFE03EB2219F3AA0009F0C8 /* data */,
+				5B156CE3222AF9CE00B61817 /* domain */,
 				5B17812F2218872C000758E4 /* view */,
 				5B93669E2215D79B00539965 /* AppDelegate.swift */,
 				5B9366A52215D79E00539965 /* Assets.xcassets */,
 				5B9366A72215D79E00539965 /* LaunchScreen.storyboard */,
 				5B9366AA2215D79E00539965 /* Info.plist */,
 				5B1781342218911B000758E4 /* Localizable.strings */,
-				5BFE03E92219A0C20009F0C8 /* StreamPlayer.swift */,
 			);
 			path = player;
 			sourceTree = "<group>";
@@ -362,44 +403,60 @@
 			path = playerUITests;
 			sourceTree = "<group>";
 		};
-		5BFE03EB2219F3AA0009F0C8 /* services */ = {
+		5BFE03EB2219F3AA0009F0C8 /* data */ = {
 			isa = PBXGroup;
 			children = (
-				5B075A692221EE4300261961 /* radio */,
-				5BFE03EC2219F3B20009F0C8 /* youtube */,
+				5BFE6CBC222C4C7B008656F1 /* youtube */,
+				5BFE6CBA222C4B7C008656F1 /* video */,
+				5B075A692221EE4300261961 /* audio */,
 			);
-			path = services;
-			sourceTree = "<group>";
-		};
-		5BFE03EC2219F3B20009F0C8 /* youtube */ = {
-			isa = PBXGroup;
-			children = (
-				5B075A612221E70800261961 /* mapper */,
-				5B075A602221E70200261961 /* models */,
-				5B075A582221E59200261961 /* api */,
-				5B075A5C2221E5E200261961 /* YoutubeDataProvider.swift */,
-				5B075A5E2221E5F200261961 /* YoutubeDataProviderProtocol.swift */,
-			);
-			path = youtube;
+			path = data;
 			sourceTree = "<group>";
 		};
 		5BFE4DF52222A8B900F7157C /* viewModel */ = {
 			isa = PBXGroup;
 			children = (
-				5BFE4DF92222A9B800F7157C /* mapper */,
 				5B075A6E2221EEE600261961 /* VideoListViewModel.swift */,
 				5BFE4DF62222A8CA00F7157C /* VideoItemViewModel.swift */,
 			);
 			path = viewModel;
 			sourceTree = "<group>";
 		};
-		5BFE4DF92222A9B800F7157C /* mapper */ = {
+		5BFE6CB8222C30E9008656F1 /* video */ = {
 			isa = PBXGroup;
 			children = (
-				5BFE4DFA2222A9CF00F7157C /* VideoListViewModelMapper.swift */,
-				5BFE4DFC2222A9DF00F7157C /* VideoListViewModelMapperProtocol.swift */,
+				5BFE6CB9222C30F5008656F1 /* mapper */,
+			);
+			path = video;
+			sourceTree = "<group>";
+		};
+		5BFE6CB9222C30F5008656F1 /* mapper */ = {
+			isa = PBXGroup;
+			children = (
+				5B075A622221E72000261961 /* YoutubeNetworkMapper.swift */,
+				5B075A642221E7E800261961 /* YoutubeNetworkMapperProtocol.swift */,
 			);
 			path = mapper;
+			sourceTree = "<group>";
+		};
+		5BFE6CBA222C4B7C008656F1 /* video */ = {
+			isa = PBXGroup;
+			children = (
+				5B075A602221E70200261961 /* models */,
+				5B075A582221E59200261961 /* network */,
+				5B075A5C2221E5E200261961 /* VideoListDataProvider.swift */,
+				5B075A5E2221E5F200261961 /* VideoListDataProviderProtocol.swift */,
+			);
+			path = video;
+			sourceTree = "<group>";
+		};
+		5BFE6CBC222C4C7B008656F1 /* youtube */ = {
+			isa = PBXGroup;
+			children = (
+				5BFE6CBD222C4C91008656F1 /* YoutubeVideoProvider.swift */,
+				5BFE6CBF222C4E83008656F1 /* YoutubeVideoProviderProtocol.swift */,
+			);
+			path = youtube;
 			sourceTree = "<group>";
 		};
 		75E3A0B7FF5B707B815966E1 /* Pods */ = {
@@ -680,9 +737,11 @@
 				5B9366A12215D79B00539965 /* ViewController.swift in Sources */,
 				5B075A632221E72000261961 /* YoutubeNetworkMapper.swift in Sources */,
 				5B93669F2215D79B00539965 /* AppDelegate.swift in Sources */,
+				5BFE6CC0222C4E83008656F1 /* YoutubeVideoProviderProtocol.swift in Sources */,
 				5B04D998221CA44400EE073C /* YoutubePlayerViewController.swift in Sources */,
+				5BFE6CBE222C4C91008656F1 /* YoutubeVideoProvider.swift in Sources */,
 				5B071A5922205EBD00BA7FA7 /* JSONYoutubeVideoList.swift in Sources */,
-				5B075A5F2221E5F200261961 /* YoutubeDataProviderProtocol.swift in Sources */,
+				5B075A5F2221E5F200261961 /* VideoListDataProviderProtocol.swift in Sources */,
 				5B075A5B2221E5BB00261961 /* YoutubeApiProtocol.swift in Sources */,
 				5BFE4DFD2222A9DF00F7157C /* VideoListViewModelMapperProtocol.swift in Sources */,
 				5BFE4DFB2222A9CF00F7157C /* VideoListViewModelMapper.swift in Sources */,
@@ -695,7 +754,7 @@
 				5B17813B22189399000758E4 /* VideoViewController.swift in Sources */,
 				5B06899D2223356A00A48A79 /* AudioListViewModelMapper.swift in Sources */,
 				5B04D992221C979F00EE073C /* VideoItemTableViewCell.swift in Sources */,
-				5B075A5D2221E5E200261961 /* YoutubeDataProvider.swift in Sources */,
+				5B075A5D2221E5E200261961 /* VideoListDataProvider.swift in Sources */,
 				5B075A6B2221EE5200261961 /* RadioStreamsProvider.swift in Sources */,
 				5B1781442218A3CB000758E4 /* AudioItemTableViewCell.swift in Sources */,
 				5B047239221DF6970054F43A /* YoutubeApi.swift in Sources */,
@@ -704,6 +763,7 @@
 				5BFE4DFF2222BF8000F7157C /* BaseViewController.swift in Sources */,
 				5B075A6F2221EEE600261961 /* VideoListViewModel.swift in Sources */,
 				5B075A652221E7E800261961 /* YoutubeNetworkMapperProtocol.swift in Sources */,
+				5B156CEA222B2DDD00B61817 /* YoutubeViewModel.swift in Sources */,
 				5B06899A2223349300A48A79 /* RadioStreamModel.swift in Sources */,
 				5B17813922189382000758E4 /* AudioViewController.swift in Sources */,
 				5B04D995221C9BDB00EE073C /* ModelYoutubeVideoInfo.swift in Sources */,

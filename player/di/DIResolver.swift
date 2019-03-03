@@ -1,6 +1,6 @@
 import Foundation
 
-typealias Resolver = VideoListDIResolver & AudiolistDIResolver
+typealias Resolver = VideoListDIResolver & AudiolistDIResolver & YoutubeDIResolver
 
 protocol VideoListDIResolver {
     func videoListView() -> BaseViewController
@@ -10,6 +10,10 @@ protocol VideoListDIResolver {
 protocol AudiolistDIResolver {
     func audioListView() -> BaseViewController
     func audioListViewModel() -> AudioListViewModel
+}
+
+protocol YoutubeDIResolver {
+    func youtubePlayerView(videoId: String) -> BaseViewController
 }
 
 class DIResolver: Resolver {
@@ -29,7 +33,7 @@ class DIResolver: Resolver {
     
     func videoListViewModel() -> VideoListViewModel {
         return VideoListViewModel(
-            videoListProvider: YoutubeDataProvider(
+            videoListProvider: VideoListDataProvider(
                 networkSource: YoutubeApi(),
                 mapper: YoutubeNetworkMapper()
             ),
@@ -50,5 +54,12 @@ class DIResolver: Resolver {
             viewModelMapper: AudioListViewModelMapper(),
             player: self.player
         )
+    }
+    
+    func youtubePlayerView(videoId: String) -> BaseViewController {
+        let vc = YoutubePlayerViewController(nibName: "YoutubePlayerViewController", bundle: nil)
+        vc.videoId = videoId
+        
+        return vc
     }
 }

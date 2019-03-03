@@ -53,8 +53,7 @@ class VideoViewController: BaseViewController {
     }
     
     private func presentPlayerWith(videoId: String) {
-        let vc = YoutubePlayerViewController(nibName: "YoutubePlayerViewController", bundle: nil)
-        vc.videoId = videoId
+        let vc = self.diResolver.youtubePlayerView(videoId: videoId)        
         self.present(vc, animated: true, completion: nil)
     }
     

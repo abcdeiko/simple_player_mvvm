@@ -14,7 +14,7 @@ class VideoListViewModel {
     let showVideoById: Observable<String>
     
     
-    init(videoListProvider: YoutubeDataProviderProtocol, viewModelMapper: VideoListViewModelMapperProtocol) {
+    init(videoListProvider: VideoListDataProviderProtocol, viewModelMapper: VideoListViewModelMapperProtocol) {
         let _reload = PublishSubject<Void>()
         self.reload = _reload.asObserver()
         

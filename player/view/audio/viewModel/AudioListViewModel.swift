@@ -38,7 +38,7 @@ class AudioListViewModel {
         // подписываемся на событие клика по ячейке
         let _ = _selected.asObservable()
             .flatMap {
-                ($0.playing ? weakPlayer?.stopAudio(streamURL: $0.url): weakPlayer?.playAudio(streamURL: $0.url)) ?? Observable.empty()
+                ($0.playing ? weakPlayer?.stop(streamURL: $0.url): weakPlayer?.play(streamURL: $0.url)) ?? Observable.empty()
             }
             .subscribe(onNext: { (_) in  _reload.onNext(()) })
         

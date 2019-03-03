@@ -1,11 +1,3 @@
-//
-//  YoutubeApi.swift
-//  player
-//
-//  Created by Yuriy on 20/02/2019.
-//  Copyright © 2019 kbshko. All rights reserved.
-//
-
 import Foundation
 
 
