@@ -25,6 +25,7 @@ class AudioListViewModel {
                 let viewModels = viewModelMapper.map($0)
                 let playingItems = weakPlayer?.getPlayingItems()
                 
+                // устанавливаем нужный флаг проигрывается сейчас элемент или нет
                 return viewModels.map { (viewModel) in
                     viewModel.playing = playingItems?.contains { $0.url == viewModel.url } ?? false
                     

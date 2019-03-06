@@ -23,9 +23,6 @@ class VideoViewController: BaseViewController {
             }
             .disposed(by: self.disposeBag)
         
-        // первый раз релоадим таблицу самостоятельно
-        viewModel.reload.onNext(())
-        
         // обработка нажатия на элемент
         tableView.rx.modelSelected(VideoItemViewModel.self)
         .bind(to: viewModel.selectVideo)
@@ -37,6 +34,9 @@ class VideoViewController: BaseViewController {
                 self?.presentPlayerWith(videoId: $0)
             })
             .disposed(by: self.disposeBag)
+        
+        // первый раз релоадим таблицу самостоятельно
+        viewModel.reload.onNext(())
     }
     
     private func configureView() {

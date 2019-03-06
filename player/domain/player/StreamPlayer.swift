@@ -89,6 +89,12 @@ class StreamPlayer: NSObject {
         }
     }
     
+    func pause(streamURL: String) {
+        guard let player = self.currentPlayingItems.first?.value else { return }
+        
+        player.pause()
+    }
+    
     func stopAll() {
         self.currentPlayingItems.forEach { (_, currentPlayer) in
             currentPlayer.pause()

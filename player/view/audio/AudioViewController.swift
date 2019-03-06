@@ -24,14 +24,14 @@ class AudioViewController: BaseViewController {
             }
             .disposed(by: self.disposeBag)
         
-        // первый раз принудительно загружаем
-        viewModel.reload.onNext(())
-        
         // обрабатываем нажатие на ячейке
         tableView.rx
             .modelSelected(AudioItemViewModel.self)
             .bind(to: viewModel.selected)
             .disposed(by: self.disposeBag)
+        
+        // первый раз принудительно загружаем
+        viewModel.reload.onNext(())
     }
     
     private func configureView() {

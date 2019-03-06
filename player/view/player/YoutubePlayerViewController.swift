@@ -24,7 +24,7 @@ class YoutubePlayerViewController: BaseViewController {
             
         let viewModel = self.diResolver.youtubePlayerViewModel()
         
-        viewModel.showVideoLayer
+        viewModel.videoLayer
             .subscribe(onNext: { [weak self] in
                 guard let self = self else { return }
                 
@@ -44,17 +44,28 @@ class YoutubePlayerViewController: BaseViewController {
             })
             .disposed(by: self.disposeBag)
         
+        // клик по кнопке закрыть
         self.btnClose.rx
             .tap
-            .bind(to: viewModel.stopVideo)
+            .bind(to: viewModel.tapCloseVideo)
             .disposed(by: self.disposeBag)
         
-        
-        
-        viewModel.playVideo.onNext(self.videoId)        
+        // тап по кнопке пауза/проиграть
+        self.btnPlay.rx
+            .tap
+            .flatMap { [weak self] in
+                return Observable.just(self?.btnPlay.tag)
+            }
+            .bind(to: viewModel.tapControl)
+            .disposed(by: self.disposeBag)
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(actionTap))
         self.view.addGestureRecognizer(tapRecognizer)
+        
+        //tapRecognizer.rx.event.bind
+        
+        // загружаем видео
+        viewModel.playVideo.onNext(self.videoId)
     }
     
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -80,8 +91,14 @@ class YoutubePlayerViewController: BaseViewController {
     }
     
     private func fadeOutControls() {
-        UIView.animate(withDuration: 0.2) {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.viewTopControls.alpha = 0
             
+            self.view.layoutIfNeeded()
+        }) { (completed) in
+            if completed {
+                self.viewTopControls.isHidden = true
+            }
         }
     }
 }
