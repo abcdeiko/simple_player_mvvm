@@ -53,10 +53,18 @@ class YoutubeViewModel {
             .asObservable()
             .do(onNext: { player.stopAll() })
         
-        _tapControl.asObservable()
-        .do(onNext: <#T##((Int?) throws -> Void)?##((Int?) throws -> Void)?##(Int?) throws -> Void#>
-        
-        self.controlTag = _controlTag.asObservable()
+        self.controlTag = _tapControl.asObservable()
+            .map { (t) -> YoutuveViewControlTag in
+                guard let tag = t else { return YoutuveViewControlTag.play }
+                return YoutuveViewControlTag(rawValue: tag) ?? YoutuveViewControlTag.play
+            }
+            .do(onNext: {
+                print($0)
+            })
+            .map { (t) -> YoutuveViewControlTag in
+                return .stop
+                //return $0 == .stop ? .play: .stop
+        }
         
         //todo проброс ошибок
         //player.itemStatus.

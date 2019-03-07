@@ -44,6 +44,15 @@ class YoutubePlayerViewController: BaseViewController {
             })
             .disposed(by: self.disposeBag)
         
+        viewModel.controlTag
+            .subscribe(onNext: { [weak self] in
+                guard let self = self else { return }
+                
+                let image = $0 == .play ? "playerControlPlay": "playerControlPause"
+                self.btnPlay.setImage(UIImage(named: image), for: .normal)
+            })
+        .disposed(by: self.disposeBag)
+        
         // клик по кнопке закрыть
         self.btnClose.rx
             .tap
@@ -58,6 +67,8 @@ class YoutubePlayerViewController: BaseViewController {
             }
             .bind(to: viewModel.tapControl)
             .disposed(by: self.disposeBag)
+        
+        
         
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(actionTap))
         self.view.addGestureRecognizer(tapRecognizer)
