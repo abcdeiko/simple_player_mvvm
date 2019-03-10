@@ -9,6 +9,8 @@ enum YoutuveViewControlTag: Int {
 
 class YoutubeViewModel {
     
+    private var videoUrl: String?
+    
     //MARK: - Input
     let playVideo: AnyObserver<String>
     
@@ -59,11 +61,10 @@ class YoutubeViewModel {
                 return YoutuveViewControlTag(rawValue: tag) ?? YoutuveViewControlTag.play
             }
             .do(onNext: {
-                print($0)
+               // $0 == .play ? player.stopAll(): player.play(streamURL: <#T##String#>)
             })
-            .map { (t) -> YoutuveViewControlTag in
-                return .stop
-                //return $0 == .stop ? .play: .stop
+            .map {
+                return $0 == .stop ? .play: .stop
         }
         
         //todo проброс ошибок
